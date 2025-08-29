@@ -4,6 +4,7 @@ import SearchBar from "../components/SearchBar";
 import CategoryLegend from "../components/CategoryLegend";
 import FilterPanel from "../components/FilterPanel";
 import ElementModal from "../components/ElementModal";
+import ElementCard from "../components/ElementCard";
 
 export default function Home() {
   const [query, setQuery] = useState("");
@@ -39,15 +40,12 @@ export default function Home() {
         {filtered.map((e) => (
           <div
             key={e.number}
-            className="element"
             style={{
               gridColumn: e.xpos,
               gridRow: e.ypos,
             }}
-            onClick={() => setSelected(e)}
           >
-            <div>{e.symbol}</div>
-            <div className="small">{e.number}</div>
+            <ElementCard element={e} onClick={() => setSelected(e)} />
           </div>
         ))}
       </section>

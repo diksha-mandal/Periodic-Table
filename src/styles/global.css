@@ -25,19 +25,30 @@ body { margin: 0; font-family: system-ui, Arial; background:#0f1115; color:#e8e8
 .element-card .sym { font-size: 20px; font-weight: 700; line-height: 1; }
 .element-card .name { font-size: 10px; opacity: 0.9; }
 
+
+.legend-chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border:1px solid #2a2d34;
+  font-size: 12px;
+  background: none;   /* make sure it doesn't override */
+}
 /* Category colors (tweak later) */
-.cat-nonmetal { background: #203040; }
-.cat-alkali-metal { background: #402030; }
-.cat-alkaline-earth-metal { background: #403020; }
-.cat-metalloid { background: #2a3a2a; }
-.cat-halogen { background: #203840; }
-.cat-noble-gas { background: #302040; }
+.cat-diatomic-nonmetal { background: #264653; }
+.cat-alkali-metal { background: #6a040f; }
+.cat-alkaline-earth-metal { background: #7f4f24; }
+.cat-metalloid { background: #386641; }
+.cat-halogen { background: #5a189a; }
+.cat-noble-gas { background: #3d405b; }
+.cat-transition-metal { background: #1d3557; }
+.cat-post-transition-metal { background: #517b84; }
+.cat-lanthanide { background: #8338ec; }
+.cat-actinide { background: #9d0208; }
 
 .search { width: 100%; padding: 10px; border-radius: 10px; border:1px solid #2a2d34; background:#151821; color:#e8e8e8; }
 .filters { margin-top: 10px; display:flex; gap:12px; flex-wrap:wrap; }
 .filters select { padding: 8px; border-radius: 10px; background:#151821; color:#e8e8e8; border:1px solid #2a2d34; }
 .legend { margin-top: 10px; display:flex; gap:8px; flex-wrap:wrap; }
-.legend-chip { padding: 6px 10px; border-radius: 999px; border:1px solid #2a2d34; font-size: 12px; }
 
 .modal-backdrop { position:fixed; inset:0; background:rgba(0,0,0,0.6); display:grid; place-items:center; }
 .modal { width:min(560px, 92vw); background:#11141b; border:1px solid #2a2d34; border-radius:16px; padding:16px; }

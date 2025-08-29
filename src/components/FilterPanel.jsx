@@ -1,19 +1,26 @@
-const categories = ["all","nonmetal","alkali-metal","alkaline-earth-metal","metalloid","halogen","noble-gas"];
-const phases = ["all","solid","liquid","gas"];
+import  {CATEGORIES, PHASES} from "../constants/constant"
 
 export default function FilterPanel({ value, onChange }) {
   return (
     <div className="filters">
       <label>
         Category:
-        <select value={value.category} onChange={e=>onChange({...value, category:e.target.value})}>
-          {categories.map(c => <option key={c} value={c}>{c}</option>)}
+        <select
+          value={value.category}
+          onChange={(e) => onChange({ ...value, category: e.target.value })}
+        >
+          <option value="all">All</option>
+          {CATEGORIES.map(([key, label]) => (
+            <option key={key} value={key}>
+              {label}
+            </option>
+          ))}
         </select>
       </label>
       <label>
         Phase:
         <select value={value.phase} onChange={e=>onChange({...value, phase:e.target.value})}>
-          {phases.map(p => <option key={p} value={p}>{p}</option>)}
+          {PHASES.map(([key, label]) => ( <option key={key} value={key}>{label}</option>))}
         </select>
       </label>
     </div>
